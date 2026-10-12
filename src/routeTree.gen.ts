@@ -10,33 +10,128 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AboutTheAuthorRouteImport } from './routes/about-the-author'
+import { Route as AboutTheBookRouteImport } from './routes/about-the-book'
+import { Route as BlogRouteImport } from './routes/blog'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as JuliesNotesRouteImport } from './routes/julies-notes'
+import { Route as PrivacyRouteImport } from './routes/privacy'
+import { Route as TermsRouteImport } from './routes/terms'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AboutTheAuthorRoute = AboutTheAuthorRouteImport.update({
+  id: '/about-the-author',
+  path: '/about-the-author',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutTheBookRoute = AboutTheBookRouteImport.update({
+  id: '/about-the-book',
+  path: '/about-the-book',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BlogRoute = BlogRouteImport.update({
+  id: '/blog',
+  path: '/blog',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const JuliesNotesRoute = JuliesNotesRouteImport.update({
+  id: '/julies-notes',
+  path: '/julies-notes',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivacyRoute = PrivacyRouteImport.update({
+  id: '/privacy',
+  path: '/privacy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TermsRoute = TermsRouteImport.update({
+  id: '/terms',
+  path: '/terms',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about-the-author': typeof AboutTheAuthorRoute
+  '/about-the-book': typeof AboutTheBookRoute
+  '/blog': typeof BlogRoute
+  '/contact': typeof ContactRoute
+  '/julies-notes': typeof JuliesNotesRoute
+  '/privacy': typeof PrivacyRoute
+  '/terms': typeof TermsRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about-the-author': typeof AboutTheAuthorRoute
+  '/about-the-book': typeof AboutTheBookRoute
+  '/blog': typeof BlogRoute
+  '/contact': typeof ContactRoute
+  '/julies-notes': typeof JuliesNotesRoute
+  '/privacy': typeof PrivacyRoute
+  '/terms': typeof TermsRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about-the-author': typeof AboutTheAuthorRoute
+  '/about-the-book': typeof AboutTheBookRoute
+  '/blog': typeof BlogRoute
+  '/contact': typeof ContactRoute
+  '/julies-notes': typeof JuliesNotesRoute
+  '/privacy': typeof PrivacyRoute
+  '/terms': typeof TermsRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/about-the-author'
+    | '/about-the-book'
+    | '/blog'
+    | '/contact'
+    | '/julies-notes'
+    | '/privacy'
+    | '/terms'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/about-the-author'
+    | '/about-the-book'
+    | '/blog'
+    | '/contact'
+    | '/julies-notes'
+    | '/privacy'
+    | '/terms'
+  id:
+    | '__root__'
+    | '/'
+    | '/about-the-author'
+    | '/about-the-book'
+    | '/blog'
+    | '/contact'
+    | '/julies-notes'
+    | '/privacy'
+    | '/terms'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutTheAuthorRoute: typeof AboutTheAuthorRoute
+  AboutTheBookRoute: typeof AboutTheBookRoute
+  BlogRoute: typeof BlogRoute
+  ContactRoute: typeof ContactRoute
+  JuliesNotesRoute: typeof JuliesNotesRoute
+  PrivacyRoute: typeof PrivacyRoute
+  TermsRoute: typeof TermsRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +143,67 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/about-the-author': {
+      id: '/about-the-author'
+      path: '/about-the-author'
+      fullPath: '/about-the-author'
+      preLoaderRoute: typeof AboutTheAuthorRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about-the-book': {
+      id: '/about-the-book'
+      path: '/about-the-book'
+      fullPath: '/about-the-book'
+      preLoaderRoute: typeof AboutTheBookRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/blog': {
+      id: '/blog'
+      path: '/blog'
+      fullPath: '/blog'
+      preLoaderRoute: typeof BlogRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/julies-notes': {
+      id: '/julies-notes'
+      path: '/julies-notes'
+      fullPath: '/julies-notes'
+      preLoaderRoute: typeof JuliesNotesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privacy': {
+      id: '/privacy'
+      path: '/privacy'
+      fullPath: '/privacy'
+      preLoaderRoute: typeof PrivacyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/terms': {
+      id: '/terms'
+      path: '/terms'
+      fullPath: '/terms'
+      preLoaderRoute: typeof TermsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutTheAuthorRoute: AboutTheAuthorRoute,
+  AboutTheBookRoute: AboutTheBookRoute,
+  BlogRoute: BlogRoute,
+  ContactRoute: ContactRoute,
+  JuliesNotesRoute: JuliesNotesRoute,
+  PrivacyRoute: PrivacyRoute,
+  TermsRoute: TermsRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
