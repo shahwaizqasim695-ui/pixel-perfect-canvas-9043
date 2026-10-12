@@ -115,7 +115,7 @@ function Notes() {
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-ink/90 p-6" onClick={() => setActive(null)}>
           <button aria-label="Close" className="absolute right-6 top-6 text-ink-foreground"><X /></button>
           <div className="w-full max-w-lg" onClick={(e) => e.stopPropagation()}>
-            <JournalPage p={pages[active]} large />
+            <JournalPage p={pages[active]!} large />
           </div>
         </div>
       )}
